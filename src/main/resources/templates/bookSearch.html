@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書籍検索システム</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bookSearch.css}" href="/css/bookSearch.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+</head>
+<body>
+    <div class="headder">
+        <p>書籍管理システム</p>
+        <input type="submit" value="サインアウト">
+    </div>
+<!-- 検索項目 -->
+    <div class="search">
+        <span>検索条件</span>
+    </div>
+    <div class="syoseki">
+        <span>書籍タイトル</span>
+        <input type="text">
+    </div>
+    <div class="sakusya">
+        <span>作者</span>
+        <input type="text">
+    </div>
+    <div class="hannsuu">
+        <span>版数</span>
+        <input type="text">
+    </div>
+    <div class="isbn">
+        <span>ISBN</span>
+        <input type="text">
+    </div>
+<form>
+    <div class="btn">
+        <span>
+            <input type="submit" value="検索" id="kennsaku"formaction="/user/booksChange" formmethod="GET" >
+        </span>
+        <input type="submit" value="新規登録">
+    </div>
+</form>
+
+
+
+</body>
+</html>

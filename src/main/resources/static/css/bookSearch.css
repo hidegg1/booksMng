@@ -1,0 +1,54 @@
+.headder{
+    display:flex;
+    justify-content:space-between
+}
+.headder p{
+    font-size: 15px;
+}
+.search{
+    text-align: center;
+    margin-top: 40px;
+    background-color: aquamarine;
+}
+.syoseki{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+.syoseki span{
+    margin-right: 60px;
+}
+.sakusya{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+.sakusya span{
+    margin-right: 120px;
+}
+.hannsuu{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+.hannsuu span{
+    margin-right: 120px;
+}
+.isbn{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+.isbn span{
+    margin-right: 115px;
+}
+.btn{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+#kennsaku{
+    background-color: cornflowerblue;
+    margin-right: 60px;
+    
+}

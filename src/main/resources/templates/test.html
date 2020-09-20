@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>ログイン画面だ</title>
+  <meta charset="UTF-8">
+  <meta name="description">
+  <link rel="stylesheet" type="text/css" href="/css/test.css">
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+
+</head>
+<body>
+
+<form>
+<h1>成功！</h1>
+  <table border="1" style="border-collapse: collapse; border-color: black">
+	<!-- <div th:if ="${userEntity}" th:object="${userEntity}" th:each="user : ${userEntityList}"> -->
+	  <tr class="kooo" th:if ="${userEntity}" th:object="${user}" th:each="user : ${userEntity}">
+	  	<th>書籍ID</th>
+	    <td>[[*{id}]]</td>
+	    <th>受注ID</th>
+	    <td>[[*{title}]]</td>
+	    <th>受注ステータス</th>
+	    <td>[[*{author}]]</td>
+	    <th>顧客名</th>
+	    <td>[[*{versionNumber}]]</td>
+	    <th>受注ID</th>
+	    <td>[[*{isbn}]]</td>
+	    <th>受注ステータス</th>
+	    <td>[[*{booksCount}]]</td>
+	    <th>備考</th>
+	    <td>[[*{note}]]</td>
+	    <th>顧客名</th>
+	    <td>
+	    	<a class="btn btn-default btn-xs" th:href="@{/cdbooksmng/adimin/booksChange(bookid = *{id})}" th:method="GET">詳細を見る</a>
+	    	
+                <!-- <input type="submit"  value="更新" name="bookid" th:action="@{/user/booksChange(bookid = *{id})}" formmethod="GET"> -->
+	        <!-- <input type="submit"  value="更新" formaction="/user/booksChange" formmethod="GET">
+	    	<input type="hidden"  name="bookid"  th:value="*{id}"> -->
+	    	
+	    </td>
+	  </tr>
+	 </table>
+	<input type="submit" value="検索画面" formaction="/user/bookSearch" formmethod="GET" >
+</form>  
+  
+</body>
+
+</html>
+

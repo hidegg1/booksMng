@@ -13,7 +13,7 @@ class BooksControllerTest {
 	MockMvc mockMvc;
 	
 	@Test
-	public void testbooksChange() throws Exception {
+	public void testEdit() throws Exception {
 		
 		mockMvc.perform(get("/cdbooksmng/admin/booksChange").param("bookid", "1"))
 		.andExpect(status().isOk())
@@ -21,25 +21,22 @@ class BooksControllerTest {
 		.andDo(log());
 }
 
-	@Test
-	void testGetonename() {
-		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
-	}
-
-	@Test
-	void testSearchDisplay() {
-		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
-	}
-
-	@Test
-	void testEdit() {
-		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
-	}
-
-	@Test
-	void testDoedit() {
-		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
-	}
+//	@Test
+//	void testGetonename() {
+//		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+//	}
+//
+//	@Test
+//	void testSearchDisplay() {
+//		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+//	}
+//
+//
+//
+//	@Test
+//	void testDoedit() {
+//		fail("‚Ü‚¾ŽÀ‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+//	}
 	
 
 }

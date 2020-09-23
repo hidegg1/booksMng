@@ -116,7 +116,28 @@
 										<input type="submit" class="far fa-backward w-25 btn btn-primary text-dark mr-5" formaction="/cdbooksmng/adimin/bookSearch" value="戻る">
 										<input type="button" class="form-control w-25 btn btn-primary text-dark submit_btn" value="変更" >
 										<input type="hidden" name="bookid" th:value=*{id}>
-									</div>	
+									</div>
+									<div id="pagination">
+								    <ul>
+								        <li id="pageTop" class="form-group form-inline" style="display:inline">
+								            <button type='button' class="top_page form-control" value='1'>＜＜</button>
+								        </li>
+								        <li id="before" class="form-group form-inline" style="display:inline">
+								            <button type='button' class="top_page form-control" th:value='現在のページ-1'>＜</button>
+								        </li>
+								        <li id="pageNumber" class="form-group form-inline" style="display:inline">
+								            <select class="form-control" id="pageNumberSelect">
+								                <option value="ページ番号" th:selected="現在のページ == ページ番号">ページ番号</option>
+								            </select>
+								        </li>
+								        <li id="next" class="form-group form-inline" style="display:inline">
+								            <button type='button' class="last_page form-control" th:value='現在のページ+1'>＞</button>
+								        </li>
+								        <li id="pageLast" class="form-group form-inline" style="display:inline">
+								            <button type='button' class="last_page form-control" th:value='最後のページ'>＞＞</button>
+								        </li>
+								    </ul>
+								</div>	
 								</div>								
 							</div>	
 						</div>

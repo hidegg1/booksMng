@@ -61,4 +61,18 @@ $(function(){
             }]
         });
     });
+    $(function(){
+	function pageChange(){
+		$('<input>').attr({
+		    type: 'hidden',
+		    name: 'PageNum',
+		    value: $(this).val()
+		}).appendTo('form');
+		$('form').attr('action', '#');
+		$('form').submit();
+	}
+	$('.top_page').click(pageChange);
+	$('.last_page').click(pageChange);
+	$('#pageNumberSelect').change(pageChange);
+});
 });

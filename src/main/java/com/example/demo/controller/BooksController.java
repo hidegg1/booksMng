@@ -38,14 +38,14 @@ public ModelAndView getonename() {
 		mv.setViewName("test.html");
 		return mv;
 	}
-	@RequestMapping(value="/user/bookSearch",method = RequestMethod.GET)
+	@RequestMapping(value="/user/bookSearch")
 	ModelAndView searchDisplay() {
 		ModelAndView mv =new ModelAndView();
 		mv.setViewName("bookSearch.html");
 		return mv;
 	}
 //	èëê–ïœçXâÊñ ëJà⁄
-	 @RequestMapping(value="/cdbooksmng/adimin/booksChange")
+	 @RequestMapping(value="/cdbooksmng/admin/booksChange")
 	 public ModelAndView edit(@RequestParam("bookid")int id){
 //		int id = bookid;
 		System.out.println(id);

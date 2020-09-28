@@ -55,12 +55,12 @@ public ModelAndView getonename() {
 		return mv;
 	}
 //	á@èëê–çXêVé¿çs
-	@RequestMapping("/cdbooksmng/adimin/doBooksChange")
+	@RequestMapping("/cdbooksmng/admin/doBooksChange")
 //	@ResponseBody 
-	 public String doedit(BooksForm booksForm,int stock,int count,int plusOrMinus) {
+	 public String doEdit(BooksForm booksForm,int stock,int count,int plusOrMinus) {
 		booksForm.setBooksCount(stock + count * plusOrMinus);
-		System.out.println("ok");
-		System.out.println(booksForm.getTitle());
+//		System.out.println("ok");
+//		System.out.println(booksForm.getTitle());
 		bookMngMapper.update(booksForm);
 	    return "redirect:/cdbooksmng/adimin/bookSearch";
 		

@@ -51,7 +51,7 @@ $(function(){
                         }    
                     }else{
                         $('form').attr('method', 'post');
-                        $('form').attr('action','/cdbooksmng/adimin/doBooksChange');
+                        $('form').attr('action','/cdbooksmng/admin/doBooksChange');
                         $('form').submit();
                     }                 
                  }

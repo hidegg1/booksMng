@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>ログイン画面だ</title>
+  <title>書籍検索画面</title>
   <meta charset="UTF-8">
   <meta name="description">
   <link rel="stylesheet" type="text/css" href="/css/test.css">
@@ -23,21 +23,19 @@
 	    <th>受注ステータス</th>
 	    <td>[[*{author}]]</td>
 	    <th>顧客名</th>
-	    <td>[[*{versionNumber}]]</td>
+	    <td>[[*{versionnumber}]]</td>
 	    <th>受注ID</th>
 	    <td>[[*{isbn}]]</td>
 	    <th>受注ステータス</th>
-	    <td>[[*{booksCount}]]</td>
+	    <td>[[*{bookscount}]]</td>
 	    <th>備考</th>
 	    <td>[[*{note}]]</td>
 	    <th>顧客名</th>
 	    <td>
 	    	<a class="btn btn-default btn-xs" th:href="@{/cdbooksmng/admin/booksChange(bookid = *{id})}" th:method="GET">詳細を見る</a>
-	    	
                 <!-- <input type="submit"  value="更新" name="bookid" th:action="@{/user/booksChange(bookid = *{id})}" formmethod="GET"> -->
 	        <!-- <input type="submit"  value="更新" formaction="/user/booksChange" formmethod="GET">
 	    	<input type="hidden"  name="bookid"  th:value="*{id}"> -->
-	    	
 	    </td>
 	  </tr>
 	 </table>

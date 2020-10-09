@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -25,7 +26,7 @@ public class BooksControllerTest {
 	@InjectMocks
 	BooksController target;
 	
-	@Mock //mock化したいクラス付与する
+	@Mock //mock化したいクラスに付与する
 	BookMngMapper bookMngMapper;
 	
 	
@@ -47,10 +48,12 @@ public class BooksControllerTest {
 
 	@Test
 	public void testDoEdit() throws Exception{
-		mockMvc.perform(post("/cdbooksmng/admin/dobooksChange").param("stock", "6")
-		.param("count", "1").param("stock", "6").param("plusOrMinus", "-1").param("booksForm", ""))
-//		.andExpect(redirectedUrl("index"))
-		.andExpect(status().isOk())
+		mockMvc.perform(post("/cdbooksmng/admin/doBooksChange").param("bookid", "1")
+		.param("title", "ない").param("author", "な").param("versionNumber", "1")
+		.param("isbn", "あ").param("booksCount", "3").param("stock", "6")
+		.param("count", "1").param("plusOrMinus", "-1"))
+		.andExpect(redirectedUrl("/cdbooksmng/admin/bookSearch"))
+//		.andExpect(status().isOk())→リダイレクトの場合、status()は使えない
 //		.andExpect(view().name("book_info_change.html")
 		.andDo(log());
 	}

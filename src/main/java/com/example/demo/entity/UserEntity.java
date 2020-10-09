@@ -17,11 +17,11 @@ public class UserEntity {
 
 	private String author;
 	
-	private String versionNumber;
+	private String versionnumber;
 	
 	private String isbn;
 	
-	private int booksCount;
+	private int bookscount;
 	
 	private String note;
 
@@ -50,13 +50,15 @@ public class UserEntity {
 		this.author = author;
 	}
 
-	public String getVersionNumber() {
-		return versionNumber;
+
+	public String getVersionnumber() {
+		return versionnumber;
 	}
 
-	public void setVersionNumber(String versionNumber) {
-		this.versionNumber = versionNumber;
+	public void setVersionnumber(String versionnumber) {
+		this.versionnumber = versionnumber;
 	}
+
 
 	public String getIsbn() {
 		return isbn;
@@ -66,14 +68,12 @@ public class UserEntity {
 		this.isbn = isbn;
 	}
 
-	
-
-	public int getBooksCount() {
-		return booksCount;
+	public int getBookscount() {
+		return bookscount;
 	}
 
-	public void setBooksCount(int booksCount) {
-		this.booksCount = booksCount;
+	public void setBookscount(int bookscount) {
+		this.bookscount = bookscount;
 	}
 
 	public String getNote() {

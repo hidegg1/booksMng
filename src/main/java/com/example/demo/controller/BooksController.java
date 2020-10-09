@@ -29,7 +29,7 @@ public class BooksController {
 	@Autowired
     BookMngMapper bookMngMapper;
 //	èëê–åüçıâÊñ 
-	 @RequestMapping(value="/cdbooksmng/adimin/bookSearch")
+	 @RequestMapping(value="/cdbooksmng/admin/bookSearch")
 public ModelAndView getonename() {
 		ModelAndView mv =new ModelAndView();
 		List<UserEntity> userEntity = bookMngMapper.slectAll();
@@ -55,14 +55,13 @@ public ModelAndView getonename() {
 		return mv;
 	}
 //	á@èëê–çXêVé¿çs
-	@RequestMapping("/cdbooksmng/admin/doBooksChange")
-//	@ResponseBody 
+	@RequestMapping(value="/cdbooksmng/admin/doBooksChange")
 	 public String doEdit(BooksForm booksForm,int stock,int count,int plusOrMinus) {
-		booksForm.setBooksCount(stock + count * plusOrMinus);
+		booksForm.setBookscount(stock + count * plusOrMinus);
 //		System.out.println("ok");
 //		System.out.println(booksForm.getTitle());
 		bookMngMapper.update(booksForm);
-	    return "redirect:/cdbooksmng/adimin/bookSearch";
+	    return "redirect:/cdbooksmng/admin/bookSearch";
 		
 	}
 	

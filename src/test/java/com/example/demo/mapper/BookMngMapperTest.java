@@ -5,16 +5,20 @@ import java.sql.Connection;
 
 import javax.transaction.Transactional;
 
+import org.dbunit.Assertion;
 import org.dbunit.DefaultDatabaseTester;
 import org.dbunit.IDatabaseTester;
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.mysql.MySqlMetadataHandler;
 import org.dbunit.operation.DatabaseOperation;
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -45,6 +49,52 @@ public class BookMngMapperTest {
 	IDataSet dataset = new FlatXmlDataSetBuilder().build(new File("src/data/beforeData.xml"));
 	DatabaseOperation.CLEAN_INSERT.execute(dbconn, dataset);
 	databaseTester = new DefaultDatabaseTester(dbconn);
+	}
+	@After
+	  public void tearDown() throws Exception {
+	    databaseTester.setTearDownOperation(DatabaseOperation.NONE);
+	    databaseTester.onTearDown();
+	  }
+	@Test
+	  public void test() {
+//	    logger.info("JUnit + DBUnitによるテスト開始。");
+
+//	    TestMain.main(null);
+
+	    try {
+	    	IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/data/updateAfter.xml"));
+	        ITable expectedTable = expectedDataSet.getTable("book_management_tbl");
+	        
+	        IDataSet databaseDataSet = databaseTester.getConnection().createDataSet();
+	        ITable actualTable = databaseDataSet.getTable("book_management_tbl");
+//	        expected: 期待値
+//	        actual: 実際の値
+//	        Assertionはtrueを前提としてテストしている
+	        Assertion.assertEquals(expectedTable, actualTable);
+	    }catch (Exception e) {
+	    	System.out.println(e);
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    }
+	
 	}
 	
 }

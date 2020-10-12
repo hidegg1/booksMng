@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-	<book_management_tbl ID="1" TITLE="Java"   AUTHOR="中村"  VERSIONNUMBER="第二版"  ISBN="444"  BOOKSCOUNT="4"  /> 
-	<book_management_tbl ID="2" TITLE="PHP"  AUTHOR="田中" VERSIONNUMBER="第三版" ISBN="999" BOOKSCOUNT="3"/> 
-	<book_management_tbl ID="3" TITLE="分かりやすいJava"  AUTHOR="秋本" VERSIONNUMBER="第三版" ISBN="898989" BOOKSCOUNT="2"/> 
+	<book_management_tbl ID="1" TITLE="Java"   AUTHOR="中村"  VERSIONNUMBER="第二版"  ISBN="444"  BOOKSCOUNT="4"  NOTE="9"/> 
+	<book_management_tbl ID="2" TITLE="PHP"  AUTHOR="田中" VERSIONNUMBER="第三版" ISBN="999" BOOKSCOUNT="3"  NOTE="9"/> 
+	<book_management_tbl ID="3" TITLE="分かりやすいJava"  AUTHOR="秋本" VERSIONNUMBER="第三版" ISBN="888" BOOKSCOUNT="2"  NOTE="3"/> 
 </dataset>

@@ -27,6 +27,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.demo.config.BookMngMapperTestConfig;
+import com.example.demo.form.BooksForm;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -37,6 +38,7 @@ public class BookMngMapperTest {
 	BookMngMapper bookMngMapper;
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	private BooksForm booksForm;
 	private static IDatabaseTester databaseTester;
 	
 	@Before
@@ -56,42 +58,21 @@ public class BookMngMapperTest {
 	    databaseTester.onTearDown();
 	  }
 	@Test
-	  public void test() {
-//	    logger.info("JUnit + DBUnitによるテスト開始。");
+	  public void updateTest() {
 
-//	    TestMain.main(null);
 
 	    try {
 	    	IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/data/updateAfter.xml"));
 	        ITable expectedTable = expectedDataSet.getTable("book_management_tbl");
+	        bookMngMapper.update(booksForm);
 	        
 	        IDataSet databaseDataSet = databaseTester.getConnection().createDataSet();
 	        ITable actualTable = databaseDataSet.getTable("book_management_tbl");
-//	        expected: 期待値
-//	        actual: 実際の値
+//	        expected: 期待値,actual: 実際の値
 //	        Assertionはtrueを前提としてテストしている
 	        Assertion.assertEquals(expectedTable, actualTable);
 	    }catch (Exception e) {
 	    	System.out.println(e);
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
 	    	
 	    }
 	

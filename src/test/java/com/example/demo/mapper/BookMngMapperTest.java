@@ -36,6 +36,7 @@ import com.example.demo.form.BooksForm;
 public class BookMngMapperTest {
 	@Autowired
 	BookMngMapper bookMngMapper;
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	private BooksForm booksForm;
@@ -64,6 +65,12 @@ public class BookMngMapperTest {
 	    try {
 	    	IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/data/updateAfter.xml"));
 	        ITable expectedTable = expectedDataSet.getTable("book_management_tbl");
+	       
+//	        BooksForm booksForm = new BooksForm();
+	        booksForm.setTitle("Go");
+	        booksForm.setAuthor("マイケル");
+//	        updateAfter.xmlと値(Bookscount(80))が合わなくても関係ない？
+	        booksForm.setBookscount(80);
 	        bookMngMapper.update(booksForm);
 	        
 	        IDataSet databaseDataSet = databaseTester.getConnection().createDataSet();
